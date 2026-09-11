@@ -39,3 +39,72 @@ Thumbs.db
 
 # Temporary files
 *.tmp
+
+# =========================
+# DATASETS - DO NOT PUSH
+# =========================
+
+data/raw/
+data/external/
+data/processed/
+data/interim/
+
+# Dataset images
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.png
+*.PNG
+*.tif
+*.tiff
+
+# Large model/checkpoint files
+*.pth
+*.pt
+*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+
+
+# =========================
+# MODEL CHECKPOINTS
+# =========================
+
+*.pth
+*.pt
+*.ckpt
+
+# =========================
+# PYTHON
+# =========================
+
+__pycache__/
+*.py[cod]
+
+# =========================
+# JUPYTER
+# =========================
+
+.ipynb_checkpoints/
+
+# =========================
+# ENVIRONMENT
+# =========================
+
+venv/
+.venv/
+env/
