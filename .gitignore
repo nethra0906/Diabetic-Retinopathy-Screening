@@ -108,3 +108,7 @@ __pycache__/
 venv/
 .venv/
 env/
+
+# Local experiment backups - do not commit
+backup_results/
+backup_models/

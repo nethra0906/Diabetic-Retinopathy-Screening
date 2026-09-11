@@ -1,0 +1,86 @@
+
+DIABETIC RETINOPATHY MODEL IMPROVEMENT
+======================================
+
+Date:
+2026-09-11
+
+MODEL
+-----
+Joint Attention Fusion Model
+
+Backbones:
+- ResNet-18
+- EfficientNet-B0
+
+Classes:
+0 = No DR
+1 = Mild
+2 = Moderate
+3 = Severe
+4 = PDR
+
+DATA
+----
+Total eligible/model images: 40,613
+
+Train: 28,429
+Validation: 6,092
+Test: 6,092
+
+EXPERIMENTS
+-----------
+
+1. Original Joint Attention Model
+   Input: 224x224
+
+   Accuracy: 0.753447
+   Macro F1: 0.676425
+   Balanced Accuracy: 0.761328
+   QWK: 0.767967
+   ROC-AUC: 0.934643
+
+
+2. Horizontal Flip TTA
+   Input: 224x224
+
+   Accuracy: 0.769370
+   Macro F1: 0.693175
+   Balanced Accuracy: 0.778770
+   QWK: 0.784102
+   ROC-AUC: 0.942397
+
+
+3. 300x300 Fine-Tuning
+
+   Accuracy: 0.723572
+   Macro F1: 0.579828
+   Balanced Accuracy: 0.634914
+   QWK: 0.735730
+   ROC-AUC: nan
+
+
+4. Expected Severity + Optimized Thresholds
+
+   Thresholds:
+   [np.float64(0.8999999999999999), np.float64(1.6500000000000006), np.float64(2.6999999999999975), np.float64(3.599999999999998)]
+
+   Validation QWK:
+   0.820803
+
+IMPORTANT METHODOLOGICAL NOTE
+-----------------------------
+The optimized thresholds were learned on the validation set.
+They MUST NOT be re-optimized on the internal test set or
+DeepDRiD external set.
+
+NEXT STEP
+---------
+Evaluate the frozen thresholds on the untouched internal test set.
+
+Then freeze the complete prediction recipe and perform
+external evaluation on DeepDRiD Set-B.
+
+The 300x300 experiment performed worse than the original
+224x224 model and should not be selected unless later
+experiments provide evidence otherwise.

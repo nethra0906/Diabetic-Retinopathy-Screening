@@ -1,0 +1,11 @@
+{
+    "thresholds": [
+        0.9,
+        1.65,
+        2.7,
+        3.6
+    ],
+    "source": "validation_set",
+    "optimization_metric": "QWK",
+    "status": "FROZEN_FOR_TEST_AND_EXTERNAL_EVALUATION"
+}

@@ -1,0 +1,97 @@
+
+DIABETIC RETINOPATHY SCREENING PROJECT
+FINAL INTERNAL TEST EVALUATION
+========================================
+
+Dataset
+-------
+Corrected unified internal test set
+Number of test images: 6092
+Number of classes: 5
+
+Classes
+-------
+0 = No DR
+1 = Mild
+2 = Moderate
+3 = Severe
+4 = PDR
+
+Model
+-----
+Joint Fine-Tuned Attention Fusion
+ResNet-18 + EfficientNet-B0
+
+----------------------------------------
+STRATEGY 1: 224x224 HORIZONTAL FLIP TTA
+----------------------------------------
+
+Accuracy:           0.774622
+Balanced Accuracy:  0.791637
+Macro Precision:    0.661730
+Macro Recall:       0.791637
+Macro F1:           0.699403
+Weighted F1:        0.795190
+QWK:                0.781754
+Cohen Kappa:        0.580251
+MCC:                0.596242
+Log Loss:           0.623150
+ROC-AUC:            0.944779
+
+----------------------------------------
+STRATEGY 2: TTA + FROZEN THRESHOLDS
+----------------------------------------
+
+Frozen thresholds:
+[0.9, 1.65, 2.7, 3.6]
+
+Accuracy:           0.755909
+Balanced Accuracy:  0.653427
+Macro Precision:    0.665629
+Macro Recall:       0.653427
+Macro F1:           0.633512
+Weighted F1:        0.777468
+QWK:                0.812089
+Cohen Kappa:        0.509694
+MCC:                0.517590
+Log Loss:           0.623150
+ROC-AUC:            0.944779
+
+----------------------------------------
+METHODOLOGICAL NOTE
+----------------------------------------
+
+The severity thresholds were optimized using the
+validation set only.
+
+Frozen thresholds:
+0.90, 1.65, 2.70, 3.60
+
+The thresholds were frozen before evaluating the
+internal test set.
+
+No test-set threshold optimization was performed.
+
+Validation QWK:
+0.820803
+
+Internal test QWK — TTA:
+0.781754
+
+Internal test QWK — TTA + frozen thresholds:
+0.812089
+
+----------------------------------------
+INTERPRETATION
+----------------------------------------
+
+Horizontal-flip TTA provides the stronger conventional
+classification performance in terms of accuracy,
+balanced accuracy, and Macro F1.
+
+Frozen ordinal thresholds improve Quadratic Weighted
+Kappa, indicating improved agreement with the ordered
+severity scale.
+
+The two strategies are therefore retained as separate
+prediction strategies for analysis.

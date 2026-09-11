@@ -1,0 +1,28 @@
+{
+    "model": "JointAttentionFusionModel",
+    "num_classes": 5,
+    "classes": [
+        "No DR",
+        "Mild",
+        "Moderate",
+        "Severe",
+        "PDR"
+    ],
+    "input_size_original": "224x224",
+    "input_size_experiment": "300x300",
+    "backbones": [
+        "ResNet-18",
+        "EfficientNet-B0"
+    ],
+    "fusion": "Attention-based feature fusion",
+    "primary_metric": "Quadratic Weighted Kappa (QWK)",
+    "tta": "Horizontal flip probability averaging",
+    "threshold_method": "Expected severity + validation-set QWK optimization",
+    "optimized_thresholds": [
+        0.8999999999999999,
+        1.6500000000000006,
+        2.6999999999999975,
+        3.599999999999998
+    ],
+    "validation_qwk_threshold_optimized": 0.8208033956648957
+}
