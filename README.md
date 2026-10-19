@@ -132,3 +132,16 @@ pip install -r requirements.txt
 ## Tech Stack
 
 PyTorch · torchvision (ResNet-18, EfficientNet-B0) · scikit-learn · OpenCV (CLAHE, Grad-CAM overlays) · pandas/numpy · matplotlib/seaborn · Kaggle GPU (T4/P100, AMP mixed precision)
+
+
+## Run the screening UI
+
+Place `best_joint_finetuned_attention_fusion_repacked.pth` in the `models/` folder. Model checkpoints are not stored in Git; share the checkpoint separately with teammates.
+
+In PowerShell, from the project root:
+
+```powershell
+py -m venv .venv-ui
+.\.venv-ui\Scripts\Activate.ps1
+python -m pip install -r .\requirements-ui.txt
+streamlit run .\app.py

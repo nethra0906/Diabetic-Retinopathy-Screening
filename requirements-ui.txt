@@ -1,0 +1,10 @@
+@"
+streamlit
+numpy
+Pillow
+matplotlib
+torch
+torchvision
+"@ | Set-Content -Encoding utf8 .\requirements-ui.txt
+
+Add-Content .gitignore "`n.venv-ui/"
