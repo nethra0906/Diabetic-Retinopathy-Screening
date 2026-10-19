@@ -1,0 +1,6 @@
+,Predicted No DR,Predicted Mild,Predicted Moderate,Predicted Severe,Predicted PDR
+Actual No DR,3686,514,77,15,3
+Actual Mild,269,183,7,3,1
+Actual Moderate,118,314,480,87,2
+Actual Severe,1,4,28,140,1
+Actual PDR,0,0,8,35,116

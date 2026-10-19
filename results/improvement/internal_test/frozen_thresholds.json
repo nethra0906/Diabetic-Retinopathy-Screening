@@ -1,0 +1,13 @@
+{
+  "thresholds": [
+    0.9,
+    1.65,
+    2.7,
+    3.6
+  ],
+  "optimized_on": "validation_set",
+  "frozen_before_internal_test": true,
+  "validation_qwk": 0.820803,
+  "internal_test_qwk": 0.8120885796855082,
+  "internal_test_tta_qwk": 0.7817537090348715
+}
